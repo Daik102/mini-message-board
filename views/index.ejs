@@ -1,0 +1,15 @@
+<%- include('partials/header', { title }) %>
+<main>
+  <h1>Odin Mini Message Board</h1>
+  <ul>
+    <% messages.forEach((message) => { %>
+      <li>
+        <div>
+          <p class="user-name"><%= message.user %></p><p class="user-date"><%= message.added %></p>
+        </div>
+        <p class="user-message"><%= message.text %></p>
+      </li>
+    <% }); %>
+  </ul>
+</main>
+<%- include('partials/footer') %>
