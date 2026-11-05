@@ -1,17 +1,6 @@
 <%- include('partials/header', { title }) %>
 <main>
   <h1>Odin Mini Message Board</h1>
-  <form method="POST" action="/new">
-    <h2>New Message</h2>
-    <div>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name">
-    </div>
-    <div>
-      <label for="message">Message:</label>
-      <input type="text" id="message" name="message">
-    </div>
-    <button type="submit">Send</button>
-  </form>
+  <%- include('partials/form', { errors, formData }) %>
 </main>
 <%- include('partials/footer') %>
