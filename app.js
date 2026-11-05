@@ -1,30 +1,39 @@
 import express from "express";
+import favicon from 'serve-favicon';
 import path from 'path';
-import { newRouter } from "./routes/newRouter.js";
 import { indexRouter } from "./routes/indexRouter.js";
+import { newRouter } from "./routes/newRouter.js";
+import { messageRouter } from "./routes/messageRouter.js";
 
 const app = express();
 const PORT = 3000;
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-app.use("/new", newRouter);
-app.use("/", indexRouter);
-
 app.set('views', path.join(import.meta.dirname, 'views'));
 app.set('view engine', 'ejs');
 
-const assetsPath = path.join(import.meta.dirname, 'public');
-app.use(express.static(assetsPath));
+app.use(express.urlencoded({ extended: true, limit: '10kb' }));
+app.use(favicon(path.join(import.meta.dirname, 'public', 'chat-processing-outline-custom.png')));
+app.use(express.static('public'));
 
-app.get('/{*splat}', (req, res) => {
-  res.status(404).render('error', { title: 'Error 404' });
+app.use('/', indexRouter);
+app.use('/new', newRouter);
+app.use('/message', messageRouter);
+
+// 404 error
+app.use((req, res, next) => {
+  const err = new Error('Page Not Found');
+  err.status = 404;
+  next(err);
 });
 
+// Error page handler
 app.use((err, req, res, next) => {
-  console.error(err);
-  res.status(err.statusCode || 500).send(err.message);
+  const statusCode = err.status || 500;
+  
+  res.status(statusCode).render('error', { 
+    title: `Error ${statusCode}`, 
+    message: err.message
+  });
 });
 
 app.listen(PORT, () => {
