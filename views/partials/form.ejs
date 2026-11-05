@@ -1,12 +1,19 @@
 <form method="POST" action="/new">
-    <h2>New Message</h2>
-    <div>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name">
-    </div>
-    <div>
-      <label for="message">Message:</label>
-      <input type="text" id="message" name="message">
-    </div>
-    <button type="submit">Submit</button>
-  </form>
+  <h2>New Message</h2>
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="user" value="<%= formData.user || '' %>">
+  </div>
+  <div>
+    <label for="message">Message:</label>
+    <textarea id="message" name="text"><%= formData.text || '' %></textarea>
+  </div>
+  <p class="error-display">
+    <% if (errors.length > 0) { %>
+      <%= errors[0].msg %>
+    <% } else { %>
+      &nbsp;
+    <% } %>
+  </p>
+  <button type="submit">Submit</button>
+</form>
