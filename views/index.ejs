@@ -2,12 +2,15 @@
 <main>
   <h1>Odin Mini Message Board</h1>
   <ul>
-    <% messages.forEach((message) => { %>
+    <% messages.forEach((message, i) => { %>
       <li>
-        <div>
-          <p class="user-name"><%= message.user %></p><p class="user-date"><%= message.added %></p>
-        </div>
-        <p class="user-message"><%= message.text %></p>
+        <a href="/message/<%= i %>">
+          <div>
+            <p class="user-name"><%= message.user %></p>
+            <p class="user-date"><%= message.added.split(',')[1] %></p>
+          </div>
+          <p class="user-message"><%= message.text %></p>
+        </a>
       </li>
     <% }); %>
   </ul>
