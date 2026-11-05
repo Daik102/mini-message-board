@@ -1,0 +1,11 @@
+<%- include('partials/header', { title }) %>
+<main>
+  <h1>Odin Mini Message Board</h1>
+    <div class="detail-container">
+      <p class="detail-name"><%= message.user %></p>
+      <p class="detail-date"><%= message.added %></p>
+      <p class="detail-message">"<%= message.text %>"</p>
+      <a href="/">Back</a>
+    </div>
+</main>
+<%- include('partials/footer') %>
