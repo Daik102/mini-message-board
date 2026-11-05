@@ -7,8 +7,9 @@
 :root {
   --bg: #222;
   --bg-hover: #333;
-  --font: #bbb;
-  --btn-hover: #aaa;
+  --border: #999;
+  --font: #ddd;
+  --btn-hover: #ccc;
 }
 
 ul {
@@ -21,7 +22,6 @@ a {
 
   &:hover {
     background-color: var(--bg-hover);
-    cursor: pointer;
   }
 }
 
@@ -50,6 +50,7 @@ header li {
 
 header a {
   padding: 1rem;
+  font-weight: 600;
   font-size: 1.25rem;
 }
 
@@ -57,11 +58,11 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 4rem 0;
+  margin: 5rem 0;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.125rem;
 }
 
 .error-title {
@@ -74,18 +75,17 @@ main ul {
   align-items: center;
   width: 100%;
   max-width: 32rem;
-  margin-top: 4rem;
+  margin-top: 4.5rem;
 }
 
 main li {
   width: 100%;
-  padding: 1rem;
-  border-bottom: 0.1rem solid var(--font);
+  border-bottom: 0.1rem solid var(--border);
+}
 
-  &:hover {
-    background-color: var(--bg-hover);
-    cursor: pointer;
-  }
+main a {
+  display: block;
+  padding: 1.5rem 1rem;
 }
 
 main li div {
@@ -96,11 +96,46 @@ main li div {
 }
 
 .user-name {
+  font-weight: 600;
   font-size: 1.25rem;
+}
+
+.user-date {
+  font-size: 0.94rem;
 }
 
 .user-message {
   font-size: 1.125rem;
+}
+
+.detail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 32rem;
+  margin-top: 4rem;
+}
+
+.detail-name {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.detail-date {
+  font-size: 1rem;
+}
+
+.detail-message {
+  font-size: 1.25rem;
+}
+
+.detail-container a {
+  margin-top: 2rem;
+  padding: 0.5rem 1rem;
+  border: 0.1rem solid var(--font);
+  border-radius: 0.375rem;
 }
 
 form {
@@ -115,11 +150,20 @@ h2 {
 }
 
 form div {
+  display: flex;
+  gap: 0.25rem;
   align-self: flex-end;
   margin: 0 4rem 1rem 0;
 }
 
+form label {
+  margin-top: 0.5rem;
+  font-size: 1.125rem;
+}
+
 form input {
+  width: 14rem;
+  height: 2.375rem;
   padding: 0.375rem;
   font-size: 1rem;
   color: var(--font);
@@ -128,8 +172,28 @@ form input {
   border-radius: 0.25rem;
 }
 
+form textarea {
+  field-sizing: content;
+  width: 14rem;
+  max-height: 14rem;
+  padding: 0.375rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--font);
+  background-color: var(--bg);
+  border: 0.1rem solid var(--font);
+  border-radius: 0.25rem;
+  resize: none;
+  outline: none;
+}
+
+.error-display {
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+}
+
 form button {
-  margin-top: 2rem;
   padding: 0.5rem 1rem;
   font-weight: 600;
   font-size: 1rem;
