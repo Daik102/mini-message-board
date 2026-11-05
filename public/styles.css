@@ -62,7 +62,14 @@ main {
 }
 
 h1 {
-  font-size: 2.125rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+h1 p {
+  font-size: 1.75rem;
 }
 
 .error-title {
@@ -96,8 +103,12 @@ main li div {
 }
 
 .user-name {
+  max-width: 12.5rem;
   font-weight: 600;
   font-size: 1.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .user-date {
@@ -119,8 +130,12 @@ main li div {
 }
 
 .detail-name {
+  max-width: 17.5rem;
   font-weight: 600;
   font-size: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .detail-date {
@@ -128,6 +143,7 @@ main li div {
 }
 
 .detail-message {
+  padding: 0 1.25rem;
   font-size: 1.25rem;
 }
 
@@ -153,7 +169,7 @@ form div {
   display: flex;
   gap: 0.25rem;
   align-self: flex-end;
-  margin: 0 4rem 1rem 0;
+  margin: 0 0 1rem 0;
 }
 
 form label {
@@ -213,4 +229,39 @@ footer {
 
 footer a {
   padding: 1rem;
+}
+
+@media screen and (min-width: 22.5em) {
+  .user-name {
+    max-width: 15rem;
+  }
+
+  form div {
+    margin: 0 1.5rem 1rem 0;
+  }
+}
+
+@media screen and (min-width: 24.25em) {
+  h1 p {
+    font-size: 2rem;
+  }
+
+  .user-name {
+    max-width: 17.5rem;
+  }
+
+  .detail-name {
+    max-width: 20rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .user-name,
+  .detail-name {
+    max-width: initial;
+  }
+
+  form div {
+    margin: 0 5rem 1rem 0;
+  }
 }
