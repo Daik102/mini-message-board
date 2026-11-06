@@ -1,7 +1,13 @@
 <h1>Project: Mini Message board</h1>
 
 A mini message board app with several features<br>
-This project is based on <a href="https://www.theodinproject.com/">The Odin Project</a>.
+This project is based on **[The Odin Project](https://www.theodinproject.com)**.
+
+## Live Demo
+
+You can visit live application here: **[Mini Message board](https://mini-message-board-52c0.onrender.com)**
+
+> ⚠️ This project is hosted on a free Render tier. It takes roughly 20–40 seconds for the initial page load.
 
 <h3>Features</h3>
 
