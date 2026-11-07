@@ -22,7 +22,11 @@ export const createNewMessage = (req, res) => {
   }
 
   const { user, text } = req.body;
-  messages.push({ user, text, added: new Date().toLocaleString() });
+  messages.push({ 
+    user, 
+    text, 
+    added: new Date(), 
+  });
   res.redirect('/');
 };
 
