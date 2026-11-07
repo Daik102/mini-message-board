@@ -7,7 +7,7 @@
         <a href="/message/<%= i %>">
           <div>
             <p class="user-name"><%= message.user %></p>
-            <p class="user-date"><%= message.added.split(',')[1] %></p>
+            <p class="user-date"><%= typeof message.added === "string" ? message.added.split(' ')[1].slice(0, 5) : message.added.toLocaleString('ja-JP', { timeStyle: 'short', timeZone: 'Asia/Tokyo' }) %></p>
           </div>
           <p class="user-message"><%= message.text %></p>
         </a>
