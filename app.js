@@ -18,7 +18,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(favicon(path.join(import.meta.dirname, 'public', 'chat-processing-outline-custom.png')));
+// app.use(favicon(path.join(import.meta.dirname, 'public', 'chat-processing-outline-custom.png')));
 app.use(express.static('public'));
 
 app.use('/', indexRouter);
