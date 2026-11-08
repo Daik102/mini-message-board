@@ -6,7 +6,7 @@ import { newRouter } from "./routes/newRouter.js";
 import { messageRouter } from "./routes/messageRouter.js";
 
 const app = express();
-
+/*
 app.set('views', path.join(import.meta.dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -41,7 +41,7 @@ app.use((err, req, res, next) => {
     message: err.message
   });
 });
-
+*/
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
