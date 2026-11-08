@@ -3,7 +3,7 @@
   <h1>Mini Message Board</h1>
     <div class="detail-container">
       <p class="detail-name"><%= message.user %></p>
-      <p class="detail-date"><%= message.added.toLocaleString('ja-JP', { dateStyle: 'medium', timeStyle: 'long', timeZone: 'Asia/Tokyo' }) %></p>
+      <p class="detail-date"><%= typeof message.added === "string" ? message.added : message.added.toLocaleString('ja-JP', { dateStyle: 'medium', timeStyle: 'long', timeZone: 'Asia/Tokyo' }) %></p>
       <p class="detail-message">"<%= message.text %>"</p>
       <a href="/">Back</a>
     </div>
