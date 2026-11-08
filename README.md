@@ -5,7 +5,7 @@ This project is based on **[The Odin Project](https://www.theodinproject.com)**.
 
 ## Live Demo
 
-Live application: **[Mini Message board](https://mini-message-board-52c0.onrender.com)**
+Live application: **[Mini Message board](https://mini-message-board-5y1g.onrender.com/)**
 
 > ⚠️ This project is hosted on a free Render tier. It takes roughly 20–30 seconds for the initial page load.
 
