@@ -1,4 +1,4 @@
-<h1>Project: Mini Message board</h1>
+# Project: Mini Message board
 
 A mini message board app with several features<br>
 This project is based on **[The Odin Project](https://www.theodinproject.com)**.
@@ -9,7 +9,7 @@ Live application: **[Mini Message board](https://mini-message-board-5y1g.onrende
 
 > ⚠️ This project is hosted on a free Render tier. It takes roughly 20–30 seconds for the initial page load.
 
-<h3>Features</h3>
+### Features
 
 - Dynamic routing with route parameters
 
@@ -19,7 +19,7 @@ Live application: **[Mini Message board](https://mini-message-board-5y1g.onrende
 
 - Custom error handling (404, 500)
 
-<h3>Tech Stack</h3>
+### Tech Stack
 
 - Frontend: EJS, CSS
 
