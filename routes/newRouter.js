@@ -7,7 +7,7 @@ export const newRouter = Router();
 newRouter.get('/', getNewMessagePage);
 
 newRouter.post('/', [
-  body('user')
+  body('username')
     .trim()
     .notEmpty().withMessage('** What\'s your name? **')
     .isLength({ max: 20 }).withMessage('** Name cannot exceed 20 characters **'),
