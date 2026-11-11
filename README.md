@@ -5,7 +5,7 @@ This project is based on **[The Odin Project](https://www.theodinproject.com)**.
 
 ## Live Demo
 
-Live application: **[Mini Message board](https://mini-message-board-5y1g.onrender.com/)**
+**https://mini-message-board-5y1g.onrender.com/**
 
 > ⚠️ This project is hosted on a free Render tier. It takes roughly 20–30 seconds for the initial page load.
 
@@ -17,12 +17,16 @@ Live application: **[Mini Message board](https://mini-message-board-5y1g.onrende
 
 - express-validator for server side validation
 
+- Relational database integration (PostgreSQL)
+
 - Custom error handling (404, 500)
 
 ### Tech Stack
 
-- Frontend: EJS, CSS
+* **Frontend:** EJS, CSS
 
-- Backend: Node.js, Express, express-validator, serve-favicon
+* **Backend:** Node.js, Express, express-validator
 
-- Icons: Pictogrammers
+* **Database:** PostgreSQL, node-postgres (pg)
+
+* **Deployment:** Render, Neon
