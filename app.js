@@ -1,5 +1,4 @@
 import express from "express";
-import favicon from 'serve-favicon';
 import path from 'path';
 import { indexRouter } from "./routes/indexRouter.js";
 import { newRouter } from "./routes/newRouter.js";
@@ -12,8 +11,6 @@ app.set('views', path.join(import.meta.dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
-
-// app.use(favicon(path.join(import.meta.dirname, 'public', 'chat-processing-outline-custom.png')));
 app.use(express.static('public'));
 
 app.use('/', indexRouter);
@@ -37,6 +34,6 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Express server running at http://localhost:${PORT}`);
 });
