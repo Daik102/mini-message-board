@@ -21,8 +21,12 @@ VALUES
 
 async function main() {
   console.log("seeding...");
+  // Use the terminal argument if provided, otherwise fall back to .env
+  const connectionString = process.argv[2] || process.env.DATABASE_URL;
   const client = new Client({
-    connectionString: `postgresql://${process.env.USER}:${process.env.DATABASE_PASSWORD}@localhost:5432/messages`
+    connectionString,
+    // Enable SSL when connecting to Neon (non-localhost)
+    ssl: connectionString.includes("localhost") ? false : { rejectUnauthorized: false },
   });
   await client.connect();
   await client.query(SQL);
@@ -30,4 +34,4 @@ async function main() {
   console.log("done");
 }
 
-main().catch(err => console.error("Error seeding database:", err));
+main();
